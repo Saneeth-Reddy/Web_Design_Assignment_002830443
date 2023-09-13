@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(aboutus.avif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+   
+    
+}
+header {
+    background-color: rgba(196, 136, 136, 0.7); 
+    padding: 5px;;
+}
+nav ul {
+    list-style-type: none;
+    
+}
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    
+}
+p{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 125%;
+}
+h2{
+    text-align: center;
+    font-style: italic;
+}
+.container {
+
+margin-left: 33%;
+}
+
+
+input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    outline: none;
+    
+  }
+ 
+select {width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    outline: none;
+    
+}
+.submit {
+    cursor: pointer;
+}
+.submit:hover {
+    background-color: rgb(129, 241, 129);
+}
+button {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    outline: none;
+}

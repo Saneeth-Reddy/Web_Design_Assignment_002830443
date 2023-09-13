@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(48, 48, 48)
+}
+header {
+    background-color: rgba(196, 136, 136, 0.7); 
+    padding: 5px;;
+}
+nav ul {
+    list-style-type: none;
+    
+}
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    
+}
+h2 {
+    color: white;
+    text-align: center;
+    
+}
+table {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+.icons{
+    width: 30px;
+    padding-left: 40%;
+}
+
+p{
+    color: white;
+    font-style: italic;
+    text-align: center;
+    
+}
