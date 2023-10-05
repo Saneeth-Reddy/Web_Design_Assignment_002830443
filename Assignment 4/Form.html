@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+	  select {
+		float:left;
+		width: 150px;
+	  }
+	  #sourcemsg {
+		padding-left: 300px;
+	  }
+
+  </style>
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form id ="form"name = "form" method="post" onsubmit ="return validateForm()" >
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="Miss." required="required"/>Miss
+			<input type="radio" name="title" id="mr" value="Mr." required="required"/>Mr.
+			<input type="radio" name="title" id="mrs" value="Mrs." required="required"/>Mrs.
+			<br><br>
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name"required="required" />
+
+			<br><br>
+			
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name"required="required" />
+			<br><br>
+			
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com"required="required" />
+			<br><br>
+			
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required="required"/>
+			<br><br>
+
+			<label for="streetAddress-1">Street Address 1*</Address>:</label>
+			<input type="text" name="streetAddress-1" id="streetAddress-1" placeholder="Address" required="required"/>
+			<br><br>
+
+
+			<label for="streetAddress-2">Street Address 2</Address>:</label>
+			<input type="text" name="streetAddress-2" id="streetAddress-2" placeholder="Address" />
+			<br><br>
+
+
+			<label for="city">City*</Address>:</label>
+			<input type="text" name="city" id="city" placeholder="Address"required="required" />
+			<br><br>
+
+
+		<label for="state">State*</label>
+    	<select name="state" id="state" required> 
+			<option value="none" selected disabled hidden>Select a state</option>
+			<option value="Alabama">Alabama</option> 
+			<option value="Alaska">Alaska</option> 
+			<option value="Arizona">Arizona</option> 
+			<option value="Arkansas">Arkansas</option> 
+			<option value="California">California</option> 
+			<option value="Colorado">Colorado</option> 
+			<option value="Connecticut">Connecticut</option> 
+			<option value="Delaware">Delaware</option> 
+			<option value="Florida">Florida</option> 
+			<option value="Georgia">Georgia</option> 
+			<option value="Hawaii">Hawaii</option> 
+			<option value="Idaho">Idaho</option> 
+			<option value="Illinois">Illinois</option> 
+			<option value="Indiana">Indiana</option> 
+			<option value="Iowa">Iowa</option> 
+			<option value="Kansas">Kansas</option> 
+			<option value="Kentucky">Kentucky</option> 
+			<option value="Louisiana">Louisiana</option> 
+			<option value="Maine">Maine</option> 
+			<option value="Maryland">Maryland</option> 
+			<option value="Massachusetts">Massachusetts</option> 
+			<option value="Michigan">Michigan</option> 
+			<option value="Minnesota">Minnesota</option> 
+			<option value="Mississippi">Mississippi</option> 
+			<option value="Missouri">Missouri</option> 
+			<option value="Montana">Montana</option> 
+			<option value="Nebraska">Nebraska</option> 
+			<option value="Nevada">Nevada</option> 
+			<option value="New Hampshire">New Hampshire</option> 
+			<option value="New Jersey">New Jersey</option> 
+			<option value="New Mexico">New Mexico</option> 
+			<option value="New York">New York</option> 
+			<option value="North Carolina">North Carolina</option> 
+			<option value="North Dakota">North Dakota</option> 
+			<option value="Ohio">Ohio</option> 
+			<option value="Oklahoma">Oklahoma</option> 
+			<option value="Oregon">Oregon</option> 
+			<option value="Pennsylvania">Pennsylvania</option> 
+			<option value="Rhode Island">Rhode Island</option> 
+			<option value="South Carolina">South Carolina</option> 
+			<option value="South Dakota">South Dakota</option> 
+			<option value="Tennessee">Tennessee</option> 
+			<option value="Texas">Texas</option> 
+			<option value="Utah">Utah</option> 
+			<option value="Vermont">Vermont</option> 
+			<option value="Virginia">Virginia</option> 
+			<option value="Washington">Washington</option> 
+			<option value="West Virginia">West Virginia</option> 
+			<option value="Wisconsin">Wisconsin</option> 
+			<option value="Wyoming">Wyoming</option> 
+		
+	
+    </select>
+	<p id ="statemsg" style ="color: red; display: none;">Select a state</p>
+	<br><br>
+			
+            <label for="zipcode" required="required">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
+			<br><br>
+             
+            <label for="zipcode" required="required">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google" /> Google
+            <input type='checkbox' name="source" value="yelp" /> Yelp 
+			<p id="sourcemsg" style="color: red; display: none;">Select option</p>
+			<br><br> 
+
+
+
+			<label for="rating">Rating*</label> 
+			
+    <select name="rating" id="rating" onchange="createCheckboxes()" required> 
+		<option value="none" selected disabled hidden>Select an Option</option>
+        <option value="1 star">1 star  &#128545</option> 
+        <option value="2 stars">2 stars &#128529</option> 
+        <option value="3 stars">3 stars &#128515</option> 
+        <option value="4 stars">4 stars &#128523</option> 
+		<option value="5 stars">5 stars &#128525</option> 
+		
+    </select>
+	<p id ="ratingmsg" style ="color: red; display: none;">Select rating</p>
+	<br><br>
+	<div id="checkboxesContainer">
+		
+	</div>
+             
+			<label for="comments" required="required">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required="required"></textarea>
+			<br><br>
+			<input type="Submit" id="submitButton" value = Submit disabled>
+			<input type="Reset">
+			<br><br>
+		 </form>
+	 </main>
+ </div>
+ 
+    
+    <div id="tableContainer" style="display: none;">
+        <table border="5" width ="100%" id="formData">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Street Address-1</th>
+                    <th>Street Address-2</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zipcode</th>
+                    <th>How did You Hear</th>
+                    <th>Rating</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+ 
+
+
+
+ 
+
+ <script>
+	
+var valid = false;
+	document.getElementById("firstName").addEventListener("keyup", function() {
+    var firstName = this.value;
+    var specialCharacters = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/;
+    
+    if (firstName.length < 4 || specialCharacters.test(firstName) || firstName.length>10) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+
+
+document.getElementById("lastName").addEventListener("keyup", function() {
+    var lastName = this.value;
+    var specialCharacters = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/;
+    if (lastName.length < 3 || specialCharacters.test(lastName) || lastName.length>10) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+
+
+
+document.getElementById("emailId").addEventListener("keyup", function() {
+    var email = this.value;
+	var emailregex = /[A-Za-z0-9._%+-]+@northeastern\.edu$/;
+    if (!emailregex.test(email)) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+
+
+
+document.getElementById("phoneNumber").addEventListener("keyup", function() {
+    var number = this.value;
+	var numberregex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    if (!numberregex.test(number)) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+
+
+
+document.getElementById("streetAddress-1").addEventListener("keyup", function() {
+    var address = this.value;
+	
+    if (address.length > 30 || address.length < 10) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+
+
+
+// document.getElementById("streetAddress-2").addEventListener("keyup", function() {
+//     var address = this.value;
+	
+//     if (address.length > 30 || address.length < 10) {
+// 		this.style.color = "red";
+// 		valid = false;
+//     } else {
+       
+// 		this.style.color = "black";
+// 		valid = true;
+//     }
+// });
+
+
+
+document.getElementById("city").addEventListener("keyup", function() {
+    var city = this.value;
+	
+    if (city.length > 15 || city.length < 4) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+
+
+
+document.getElementById("zipcode").addEventListener("keyup", function() {
+    var zip = this.value;
+	var zipregex=/^\d{5}(?:[-\s]\d{4})?$/;
+    if (!zipregex.test(zip)) {
+		this.style.color = "red";
+		valid = false;
+    } else {
+       
+		this.style.color = "black";
+		valid = true;
+    }
+});
+document.getElementById("state").addEventListener("change", function () {
+
+    document.getElementById("statemsg").style.display = "none";
+});
+document.getElementById("rating").addEventListener("change", function () {
+
+    document.getElementById("ratingmsg").style.display = "none";
+});
+var source = document.querySelectorAll('input[name="source"]');
+source.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+        
+        document.getElementById("sourcemsg").style.display = "none";
+    });
+});
+
+function createCheckboxes() {
+            var rating = document.getElementById("rating");
+            var checkboxesContainer = document.getElementById("checkboxesContainer");
+            checkboxesContainer.innerHTML = "";
+
+            var ratingvalue = rating.value;
+
+            if (ratingvalue === "1 star") {
+                
+                createCheckbox("foodisworst", "Food is worst");
+                createCheckbox("noservices", "No services");
+				
+
+            }
+			else if(ratingvalue === "2 stars") {
+				createCheckbox("noambience", "No decent ambience");
+				createCheckbox("foodisnotgood", "Food is Not so good");
+
+
+			}
+			else if(ratingvalue ==="3 stars"){
+				createCheckbox("Canimprove", "Taste can be improved");
+				createCheckbox("improveservice", "Improve your service");
+			}
+			else if(ratingvalue ==="4 stars"){
+				createCheckbox("good", "Food is good");
+				createCheckbox("peacefull", "Peacefull ambience");
+			}
+
+
+			else if(ratingvalue ==="5 stars"){
+				createCheckbox("excellent", "Food is Excellent");
+				createCheckbox("great", "Great Hospitality");
+			}
+        }
+
+        function createCheckbox(id, labelContent) {
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "comments";
+    checkbox.id = id;
+
+    var label = document.createElement("label");
+    label.htmlFor = id;
+    label.appendChild(document.createTextNode(labelContent));
+
+    var textBox = document.createElement("input");
+    textBox.type = "text";
+    textBox.name = "commentText";
+    textBox.id = id + "-text"; 
+    textBox.placeholder = "Add your comment here";
+    textBox.style.display = "none"; 
+
+    checkboxesContainer.appendChild(checkbox);
+    checkboxesContainer.appendChild(label);
+    checkboxesContainer.appendChild(textBox); 
+
+    checkboxesContainer.appendChild(document.createElement("br"));
+
+    
+    checkbox.addEventListener("change", function () {
+        var textId = this.id + "-text";
+        var textBox = document.getElementById(textId);
+        textBox.style.display = this.checked ? "inline-block" : "none";
+    });
+}
+	
+function displayFormData() {
+    var tableContainer = document.getElementById("tableContainer");
+    var formDataTable = document.getElementById("formData").getElementsByTagName('tbody')[0];
+
+    var newRow = formDataTable.insertRow();
+
+    var name = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
+    var email = document.getElementById("emailId").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var address1 = document.getElementById("streetAddress-1").value;
+    var address2 = document.getElementById("streetAddress-2").value;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+    var zipcode = document.getElementById("zipcode").value;
+    var howYouHear = Array.from(document.querySelectorAll('input[name="source"]:checked')).map(checkbox => checkbox.value).join(', ');
+    var rating = document.getElementById("rating").value;
+    var comments = document.getElementById("comments").value;
+
+    
+    var selectedCheckboxes = Array.from(document.querySelectorAll('#checkboxesContainer input[type="checkbox"]:checked'));
+    var selectedComments = selectedCheckboxes.map(checkbox => {
+        var textInputId = checkbox.id + "-text";
+        return document.getElementById(textInputId).value;
+    });
+
+  
+    var selectedOptionsString = selectedCheckboxes.map((checkbox, index) => {
+        return checkbox.nextElementSibling.textContent + ": " + selectedComments[index];
+    }).join(', ');
+
+    newRow.insertCell(0).innerHTML = name;
+    newRow.insertCell(1).innerHTML = email;
+    newRow.insertCell(2).innerHTML = phoneNumber;
+    newRow.insertCell(3).innerHTML = address1;
+    newRow.insertCell(4).innerHTML = address2;
+    newRow.insertCell(5).innerHTML = city;
+    newRow.insertCell(6).innerHTML = state;
+    newRow.insertCell(7).innerHTML = zipcode;
+    newRow.insertCell(8).innerHTML = howYouHear;
+    newRow.insertCell(9).innerHTML = rating;
+    newRow.insertCell(10).innerHTML = comments + '<br>' + selectedOptionsString;
+
+    tableContainer.style.display = "block";
+}
+
+
+
+document.getElementById("submitButton").addEventListener("click", function (event) {
+    event.preventDefault();
+    displayFormData();
+	document.getElementById("form").reset();
+
+});
+function updateSubmitButton() {
+        var submitButton = document.getElementById("submitButton");
+        var form = document.getElementById("form");
+
+        if (form.checkValidity() && valid) { 
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+	function checkInputValidity(input) {
+    if (input.style.color === "red") {
+        return false;
+    }
+    return true;
+}
+
+
+
+    
+    var formElements = document.querySelectorAll("input, select, textarea");
+    formElements.forEach(function (element) {
+        element.addEventListener("input", updateSubmitButton);
+    });
+
+
+		
+	
+ </script>
+ </body>
+</html>
