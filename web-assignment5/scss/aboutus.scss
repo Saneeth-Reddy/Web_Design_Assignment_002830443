@@ -1,0 +1,79 @@
+%text-style {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 125%;
+}
+
+%container-style {
+    margin-left: 33%;
+}
+
+%input-style {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    outline: none;
+}
+
+%submit-style {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('aboutus.avif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: rgba(40, 43, 210, 0.7);
+    padding: 5px;
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    @extend %text-style;
+}
+
+p {
+    @extend %text-style;
+}
+
+.container {
+    @extend %container-style;
+}
+
+input, select, button {
+    @extend %input-style;
+}
+
+.submit {
+    @extend %submit-style;
+    &:hover {
+        background-color: rgb(129, 241, 129);
+    }
+}

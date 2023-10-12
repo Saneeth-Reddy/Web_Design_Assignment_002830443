@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Comparison</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" type="image/jpg" href="pcqr56EXi-removebg-preview.png">
+</head>
+<body>
+  <header class="header-1">
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="home.html">Overview</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="home-content">
+    <h1>Welcome to the Car Comparison Website</h1>
+    <p>Find the perfect car for your needs. Compare features, specifications, and more.</p>
+    <a href="features.html" class="btn">View Features</a>
+  </section>
+
+  <section class="car-options">
+    <h2>Explore Our Car Options</h2>
+    <div class="car-grid">
+      <div class="car-item">
+        <img src="bmw overview.webp" alt="Car 1">
+        <h3>BMW M8 COMPETITION</h3>
+        <a href="features.html#bmw">View Details</a>
+
+      </div>
+      <div class="car-item">
+        <img src="porshe overview.jpeg" alt="Car 2">
+        <h3>PORSHE</h3>
+        <a href="features.html#bmw">View Details</a>
+      </div>
+      <div class="car-item">
+        <img src="corvette overview.jpeg" alt="Car 3">
+        <h3>CHEVROLET CORVETTE</h3>
+        <a href="features.html#bmw">View Details</a>
+      </div>
+      <div class="car-item">
+        <img src="shelby overview.jpeg" alt="Car 4">
+        <h3>MUSTANG SHELBY</h3>
+        <a href="features.html#bmw">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2023 Car Comparison. All rights reserved.
+  </footer>
+  <script> 
+
+  // JavaScript for handling anchor links
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all the "View Details" links
+    var viewDetailsLinks = document.querySelectorAll('a[href^="#"]');
+  
+    // Handle click events on the links
+    for (var i = 0; i < viewDetailsLinks.length; i++) {
+      viewDetailsLinks[i].addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        var targetId = this.getAttribute('href').substring(1); // Get the target ID
+  
+        // Find the target element with the matching ID
+        var targetElement = document.getElementById(targetId);
+  
+        if (targetElement) {
+          // Scroll to the target element
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+  
+          // Add a CSS class to highlight the target element
+          targetElement.classList.add('highlight');
+        }
+      });
+    }
+  });
+  
+</script>
+</body>
+</html>
